@@ -63,13 +63,17 @@ class SystemSocketRequest implements \JsonSerializable
 
     /**
      * @param string $key
-     * @param string $value
+     * @param mixed $value
      */
-    public function addPayload(string $key, string $value): void
+    public function addPayload(string $key, $value): void
     {
         $this->payload[$key] = $value;
     }
 
+    public function setPayLoad(array $payLoad)
+    {
+        $this->payload = $payLoad;
+    }
     /**
      * Specify data which should be serialized to JSON
      * @link https://php.net/manual/en/jsonserializable.jsonserialize.php
