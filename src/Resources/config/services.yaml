@@ -1,0 +1,9 @@
+services:
+    GepurIt\SystemSocketBundle\Rabbit\StreamQueue:
+        class: GepurIt\SystemSocketBundle\Rabbit\StreamQueue
+        arguments:
+            - '@rabbit_mq'
+            - 'erp_to_socket_appeal'
+
+    GepurIt\SystemSocketBundle\SystemSocket:
+        autowire: true

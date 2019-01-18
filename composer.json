@@ -1,0 +1,45 @@
+{
+  "name": "gepur-it/system-socket",
+  "description": "Gepur It system socket",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "version":"1.0.0",
+  "authors": [
+    {
+      "name": "Andrii Yakovlev",
+      "email": "yawa20@gmail.com"
+    },
+    {
+      "name": "Victor Pavlov",
+      "email": "zogxray@gmail.com"
+    }
+  ],
+  "keywords": [
+    "gepur",
+    "symfony",
+    "bundle"
+  ],
+  "homepage": "https://github.com/gepur-it/system-socket",
+  "require": {
+    "php": "^7.2",
+    "gepur-it/rabbitmq-bundle": "^1.2"
+  },
+  "suggest": {
+    "symfony/dependency-injection": "Allows to configure services"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "GepurIt\\SystemSocketBundle\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "GepurIt\\SystemSocketBundle\\Tests\\": "Tests"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
