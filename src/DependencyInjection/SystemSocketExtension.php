@@ -6,6 +6,7 @@
 
 namespace GepurIt\SystemSocketBundle\DependencyInjection;
 
+use GepurIt\SystemSocketBundle\Rabbit\StreamQueue;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
@@ -29,5 +30,11 @@ class SystemSocketExtension extends Extension
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yaml');
+
+        $configuration = $this->getConfiguration($configs, $container);
+        $config        = $this->processConfiguration($configuration, $configs);
+
+        $queue = $container->getDefinition(StreamQueue::class);
+        $queue->replaceArgument(1, $config['queue_name']);
     }
 }
